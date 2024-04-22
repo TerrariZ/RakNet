@@ -155,6 +155,10 @@ abstract class Session{
 		return intdiv(hrtime(true), 1_000_000);
 	}
 
+	public function getLogger() : \Logger{
+		return $this->logger;
+	}
+
 	public function getAddress() : InternetAddress{
 		return $this->address;
 	}
@@ -275,6 +279,9 @@ abstract class Session{
 		}
 	}
 
+	/**
+	 * @throws PacketHandlingException
+	 */
 	public function handlePacket(Packet $packet) : void{
 		$this->isActive = true;
 		$this->lastUpdate = microtime(true);

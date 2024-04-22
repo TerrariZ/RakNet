@@ -20,6 +20,7 @@ use pocketmine\utils\BinaryDataException;
 use raklib\generic\DisconnectReason;
 use raklib\generic\Session;
 use raklib\generic\SocketException;
+use raklib\generic\PacketHandlingException;
 use raklib\protocol\ACK;
 use raklib\protocol\Datagram;
 use raklib\protocol\EncapsulatedPacket;
@@ -247,7 +248,12 @@ class Server implements ServerInterface{
 						$packet = new Datagram();
 					}
 					$packet->decode(new PacketSerializer($buffer));
-					$session->handlePacket($packet);
+					try{
+						$session->handlePacket($packet);
+					}catch(PacketHandlingException $e){
+						$session->getLogger()->error("Error receiving packet: " . $e->getMessage());
+						$session->forciblyDisconnect($e->getDisconnectReason());
+					}
 					return true;
 				}elseif($session->isConnected()){
 					//allows unconnected packets if the session is stuck in DISCONNECTING state, useful if the client
