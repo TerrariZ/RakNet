@@ -1,8 +1,8 @@
 ## Exceptions
 
-The usage of this library with PocketMine-MP will allow the creation
+The usage of this library with TerrariZ will allow the creation
 of derivated non open-source works, without direct usage of RakLib.
-Only PocketMine-MP and their plugins will be able to use the library
+Only TerrariZ and their plugins will be able to use the library
 without license restrictions.
 
 
