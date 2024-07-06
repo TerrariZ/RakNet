@@ -1,9 +1,9 @@
-# RakLib
+# RakNet
 ![CI](https://github.com/pmmp/RakLib/workflows/CI/badge.svg)
 
 __UDP network library that follows the RakNet protocol for PHP__
 
-This library is very lightweight on actual implementation - it provides the bare minimum to get a Minecraft Pocket Edition server functional. It only currently provides server functionality, and does not support most RakNet features.
+This library is very lightweight on actual implementation - it provides the bare minimum to get a terraria server functional. It only currently provides server functionality, and does not support most RakNet features.
 
 
 _This project is not affiliated with Jenkins Software LLC nor RakNet._
@@ -23,8 +23,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ## Exceptions
-The usage of this library with PocketMine-MP will allow the creation
+The usage of this library with TerrariZ will allow the creation
 of derivated non open-source works, without direct usage of RakLib.
-Only PocketMine-MP and their plugins will be able to use the library
+Only TerariZ and their plugins will be able to use the library
 without license restrictions.
 ```
